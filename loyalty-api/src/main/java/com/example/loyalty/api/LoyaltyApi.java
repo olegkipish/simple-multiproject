@@ -13,24 +13,23 @@ import org.springframework.web.bind.annotation.*;
 )
 public interface LoyaltyApi {
 
-	@PostMapping(value = "register")
+	@RequestMapping(value = "register", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
 	GeneralResponse registerPlayer(
 			@RequestBody RegisterPlayerRequest request
 	);
 
-	@PostMapping(
-			value = "{playerId}",
-			consumes = MediaType.APPLICATION_JSON_UTF8_VALUE
-	)
-	@ResponseBody LoyaltyBalanceResponse add(
+	@RequestMapping(value = "{playerId}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	LoyaltyBalanceResponse add(
 			@PathVariable("playerId") String playerId,
 			@RequestBody AddPointsRequest request
 	);
 
-	@GetMapping(value = "{playerId}/balance")
-	@ResponseBody LoyaltyBalanceResponse getBalance(
+	@RequestMapping(value = "{playerId}/balance", method = RequestMethod.GET)
+	@ResponseBody
+	LoyaltyBalanceResponse getPointBalance(
 			@PathVariable("playerId") String playerId
 	);
-	
+
 }

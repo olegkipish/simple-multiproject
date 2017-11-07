@@ -52,7 +52,7 @@ public class LoyaltyApiController implements LoyaltyApi {
 	}
 
 	@Override
-	public LoyaltyBalanceResponse getBalance(
+	public LoyaltyBalanceResponse getPointBalance(
 			@PathVariable @NonNull String playerId) {
 		log.info("Getting balance for player with id {}...", playerId);
 		try {

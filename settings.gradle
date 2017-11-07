@@ -1,7 +1,9 @@
 rootProject.name = 'newage-test'
+include 'configuration-service'
+include 'registry-service'
+include 'routing-service'
+include 'utility'
 include 'loyalty-api'
 include 'wallet-api'
 include 'loyalty-service'
 include 'wallet-service'
-include 'utility'
-

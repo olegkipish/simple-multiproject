@@ -4,9 +4,6 @@ version = '1.0'
 
 repositories {
     mavenLocal()
-    maven {
-        url 'http://maven.wideup.net/nexus/content/groups/public/'
-    }
     mavenCentral()
 }
 
@@ -21,6 +18,3 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
