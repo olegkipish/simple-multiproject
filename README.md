@@ -39,9 +39,9 @@ Run containers:
 
 Through routing service:
 
-[Wallet service swagger](http://localhost:8082/wallet-service/swagger-ui.html)
+[Wallet service swagger](http://192.168.99.100:8082/wallet-service/swagger-ui.html)
 
-[Loyalty service swagger](http://localhost:8082/loyalty-service/swagger-ui.html)
+[Loyalty service swagger](http://192.168.99.100:8082/loyalty-service/swagger-ui.html)
 
 ## Eureka
 
