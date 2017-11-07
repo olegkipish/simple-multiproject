@@ -14,24 +14,35 @@ Clone project
 
     git clone https://github.com/olegkipish/simple-multiproject.git    
     
-Build all modules
+Build all modules and docker images for them
 
 	cd simple-multiproject
 	gradlew clean build
 
-## Start loyalty service
+## Start infrastructure containers
 
-	cd loyalty-service\build\libs
-	java -jar loyalty-service-0.0.1-SNAPSHOT.jar
-	
-## Start wallet service
+Make sure that VM has enough memory (At least 2048 Mb is recommended).
+Path Docker virtual machine with command:
+    
+    docker-machine ssh default "sudo sysctl -w vm.max_map_count=262144"
 
-	cd wallet-service\build\libs
-	java -jar wallet-service-0.0.1-SNAPSHOT.jar
+Run containers:
+
+    docker-compose -f docker-compose-infrastructure.yml up -d
+
+## Start business containers
+    
+    docker-compose -f docker-compose-business.yml up -d
 
 # URLs
 ## Business services
 
-[Wallet service swagger](http://localhost:8090/wallet-service/swagger-ui.html)
+Through routing service:
 
-[Loyalty service swagger](http://localhost:8080/loyalty-service/swagger-ui.html)
+[Wallet service swagger](http://localhost:8082/wallet-service/swagger-ui.html)
+
+[Loyalty service swagger](http://localhost:8082/loyalty-service/swagger-ui.html)
+
+## Eureka
+
+[Link to UI](http://192.168.99.100:8761)
