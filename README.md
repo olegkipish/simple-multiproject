@@ -7,6 +7,7 @@ It contains modules:
 To clone, build and start application you need:
 * Git client
 * Java 8
+* Docker (for Windows 'Docker toolbox' is preferable)
 
 # Build and start
 
