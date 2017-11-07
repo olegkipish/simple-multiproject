@@ -3,6 +3,7 @@ eureka:
     serviceUrl:
       preferIpAddress: true
       defaultZone: ${CONFIG_EUREKA_URL:http://localhost:8761}/eureka/
+      useDnsForFetchingServiceUrls: false
 
 logging:
   level:
